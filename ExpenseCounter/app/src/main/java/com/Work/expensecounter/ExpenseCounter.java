@@ -14,18 +14,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class ExpenseCounter extends AppCompatActivity {
 
-    // Variable para guardar el total (fuera de los métodos para que persista)
+
     private double totalExpenses = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_expense_counter);
 
-        // Configuración de los márgenes del sistema (Edge-to-Edge)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(this, "Gasto agregado", Toast.LENGTH_SHORT).show();
             } else {
-                // Si está vacío, mostramos un error
+
                 Toast.makeText(this, "Escribe un monto por favor", Toast.LENGTH_SHORT).show();
             }
         });
