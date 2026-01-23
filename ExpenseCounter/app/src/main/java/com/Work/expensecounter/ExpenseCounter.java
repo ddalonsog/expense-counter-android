@@ -14,18 +14,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Locale;
 
+//Declaring class, "extends" means that this class is and Android window
 public class ExpenseCounter extends AppCompatActivity {
 
-
+    //Global variable to save the total expenses
     private double totalExpenses = 0.0;
 
+    //This method executes automatically when this window is opened
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_expense_counter);
+        super.onCreate(savedInstanceState); //Calls Android Constructor to prepare the base
+        EdgeToEdge.enable(this); //Activates fullscreen design
+        setContentView(R.layout.activity_expense_counter); // Connects the code with the xml file for visuals
 
 
+        //Adjusts the margins to avoid buttons being hided by clock or the camera
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -41,27 +44,28 @@ public class ExpenseCounter extends AppCompatActivity {
         //Actions and behaivior for the botton
         btnAdd.setOnClickListener(v -> {
 
+            //taking the values introduced and convert them to String
             String amountText = etAmount.getText().toString();
 
-
+            //Verifying that the amount field is not empty
             if (!amountText.isEmpty()) {
 
-                double amount = Double.parseDouble(amountText);
+                double amount = Double.parseDouble(amountText); //Converting the amount from String to double
                 
 
                 totalExpenses += amount;
 
-
+                //Updating the TextView to show the total expenses in ($0.00) format
                 tvTotal.setText(String.format(Locale.getDefault(), "$%.2f", totalExpenses));
 
-
+                //Erases what was introduced by the user facilitating the next entry
                 etAmount.setText("");
                 etDescription.setText("");
 
-
+                //Showing confirmation message
                 Toast.makeText(this, "Gasto agregado", Toast.LENGTH_SHORT).show();
             } else {
-
+                //Showing error message
                 Toast.makeText(this, "Escribe un monto por favor", Toast.LENGTH_SHORT).show();
             }
         });

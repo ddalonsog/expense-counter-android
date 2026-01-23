@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExpenseCounter">
 
+
         <activity
             android:name=".signIn"
             android:exported="true">
@@ -21,9 +22,16 @@
             </intent-filter>
         </activity>
 
+
         <activity
             android:name=".ExpenseCounter"
             android:exported="false" />
+
+
+        <activity
+            android:name=".createUser"
+            android:exported="false" />
+
     </application>
 
 </manifest>
