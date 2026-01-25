@@ -63,10 +63,10 @@ public class ExpenseCounter extends AppCompatActivity {
                 etDescription.setText("");
 
                 //Showing confirmation message
-                Toast.makeText(this, "Gasto agregado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Added Expense", Toast.LENGTH_SHORT).show();
             } else {
                 //Showing error message
-                Toast.makeText(this, "Escribe un monto por favor", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Put an Amount Please", Toast.LENGTH_SHORT).show();
             }
         });
     }

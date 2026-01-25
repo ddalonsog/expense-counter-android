@@ -30,14 +30,15 @@ public class createUser extends AppCompatActivity {
             if(!userID.isEmpty() && !password.isEmpty() ) {
                 SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);//Opens the file in private mode
                 SharedPreferences.Editor editor = prefs.edit();//Created an editor to save the data
-                editor.putString("current_user", userID);//Saves the userID
-                editor.putString("password", password);//Saves the passwrd
+                editor.putString("user_pass_" + userID, password);//Saves the userID
+                editor.putBoolean("any_user_registered", true);//Saves the passwrd
+                editor.putString("active_user", userID);//Saves the current user ("active_user")
                 editor.apply();//Confirms the writing for data storage
 
                 Toast.makeText(this, "Welcome " + userID, Toast.LENGTH_SHORT).show();//Confirmation message
 
                 //Creates the Intent and Opens the ExpenseCounter activity
-                Intent intent = new Intent(this, ExpenseCounter.class);
+                Intent intent = new Intent(this, mainMenu.class);
                 startActivity(intent);
                 finish();//Closes the current activity
             }

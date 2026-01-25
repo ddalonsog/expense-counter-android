@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/salaryLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".salaryDistrb">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="Add Salary"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSalary"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:hint="Salary ($)"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvLabelType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Salary Type:"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/spinnerSalaryType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSalary" />
+
+    <Spinner
+        android:id="@+id/spinnerSalaryType"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelType" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="114dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:text="Enter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSalaryType" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
